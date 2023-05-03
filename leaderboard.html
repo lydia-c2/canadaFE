@@ -216,7 +216,7 @@
         window.location.hostname === "[::1]" ||
         window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
       )
-      const api = isLocalhost ? "http://localhost:8200" : "";
+      const api = isLocalhost ? "http://127.0.0.1:8200/leaderboardList" : "";
 
       function addData(username, password, pointsEasy, pointsMedium, pointsHard){
 
@@ -242,7 +242,7 @@
       }
 
       const getList = async () => {
-        const list = await fetch(api + "/leaderboardList").then((r) => r.json());
+        const list = await fetch(api + "/leaderboard").then((r) => r.json());
         return list
       };
 
